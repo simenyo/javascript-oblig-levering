@@ -1,4 +1,5 @@
 // Oppgave 1
+// Set the element with id "remove" to null. could also use ""?
 let rmvBtn = document.getElementById("remove-btn");
 rmvBtn.addEventListener("click", () => {
     document.getElementById("remove").innerHTML = null;
