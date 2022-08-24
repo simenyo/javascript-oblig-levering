@@ -6,12 +6,14 @@ rmvBtn.addEventListener("click", () => {
 });
 
 // Oppgave 2
+// Using innerText instead of innerHtml.
 let changeBtn = document.getElementById("change-btn");
 changeBtn.addEventListener("click", () => {
-    document.getElementById("change").innerHTML = "Simen er best";
+    document.getElementById("change").innerText = "Simen er best";
 });
 
 // Oppgave 3
+// Fetching what's typed into the InputBox by using .value
 let textInputBox = document.getElementById("input");
 textInputBox.addEventListener("keyup", () => {
     let typedText = textInputBox.value;
@@ -20,6 +22,16 @@ textInputBox.addEventListener("keyup", () => {
 
 // Oppgave 4
 const myList = ["item one", "item two", "item three"];
+
+let ul = document.getElementById("ul");
+let writeListBtn = document.getElementById("write-list");
+let i = 0;
+writeListBtn.addEventListener("click", () => {
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(myList[i]));
+    i++;
+    ul.appendChild(li);
+});
 
 // Oppgave 5
 
