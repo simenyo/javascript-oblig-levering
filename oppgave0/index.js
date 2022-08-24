@@ -1,4 +1,9 @@
 // Oppgave 1
+let rmvBtn = document.getElementById("remove-btn");
+rmvBtn.addEventListener("click", () => {
+    document.getElementById("remove").innerHTML = null;
+});
+
 // Oppgave 2
 // Oppgave 3
 // Oppgave 4
