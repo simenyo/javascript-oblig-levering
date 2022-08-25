@@ -24,7 +24,7 @@ textInputBox.addEventListener("keyup", () => {
 const myList = ["item one", "item two", "item three"];
 
 // fetching the relevant html entities.
-const ul = document.getElementById("ul");
+const ul4 = document.getElementById("ul");
 const writeListBtn = document.getElementById("write-list");
 
 // on click fetches the first element from the array until it's empty.
@@ -32,7 +32,7 @@ writeListBtn.addEventListener("click", () => {
     let li = document.createElement("li");
     if (myList.length !== 0) {
         li.appendChild(document.createTextNode(myList.shift()));
-        ul.appendChild(li);
+        ul4.appendChild(li);
     }
 });
 
@@ -43,29 +43,7 @@ const textInput = document.getElementById("text");
 const createBtn = document.getElementById("create");
 let tagInputEventTriggered = false;
 
-// const TagAndText = {
-//     tag: "",
-//     text: "",
-// };
-
-/**
- * Eventhandler on "blur" instead of "change". If user opens dropdown but does
- * not change the value this will not trigger the eventlistener when using "change".
- */
-// tagInput.addEventListener("blur", () => {
-//     TagAndText.tag = tagInput.value;
-//     tagInputEventTriggered = true;
-// });
-
-// textInput.addEventListener("keyup", () => {
-//     TagAndText.text = textInput.value;
-// });
-
 createBtn.addEventListener("click", () => {
-    // if (!tagInputEventTriggered) {
-    //     TagAndText.tag = tagInput.value;
-    // }
-
     let node = document.createElement(tagInput.value);
     node.textContent = textInput.value;
     if (!textVisual.childElementCount) {
@@ -74,18 +52,15 @@ createBtn.addEventListener("click", () => {
         textVisual.removeChild(textVisual.firstChild);
         textVisual.appendChild(node);
     }
-
-    // node.appendChild(document.createTextNode(obj.text));
-    // console.log(!placeholder.childElementCount);
-    // if (!placeholder.childElementCount) {
-    //     placeholder.appendChild(node);
-    // }else{
-    //     placeholder.removeChild(node);
-    // }
-
 });
 
 // Oppgave 6
+let ul6 = document.getElementById("list");
+const removeLiBtn = document.getElementById("remove-li");
+
+removeLiBtn.addEventListener("click", () => {
+    ul6.removeChild(ul6.lastElementChild);
+});
 
 // Oppgave 7
 
