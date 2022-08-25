@@ -23,17 +23,21 @@ textInputBox.addEventListener("keyup", () => {
 // Oppgave 4
 const myList = ["item one", "item two", "item three"];
 
+// fetching the relevant html entities.
 let ul = document.getElementById("ul");
 let writeListBtn = document.getElementById("write-list");
-let i = 0;
+
+// on click fetches the first element from the array until it's empty.
 writeListBtn.addEventListener("click", () => {
     let li = document.createElement("li");
-    li.appendChild(document.createTextNode(myList[i]));
-    i++;
-    ul.appendChild(li);
+    if (myList.length !== 0) {
+        li.appendChild(document.createTextNode(myList.shift()));
+        ul.appendChild(li);
+    }
 });
 
 // Oppgave 5
+
 
 // Oppgave 6
 
