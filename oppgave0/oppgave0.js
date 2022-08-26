@@ -1,16 +1,21 @@
 // Oppgave 1
-// Set the element with id "remove" to null. could also use ""?
 const rmvBtn = document.getElementById("remove-btn");
-rmvBtn.addEventListener("click", () => {
-    document.getElementById("remove").innerHTML = null;
-});
+
+function removeText() {
+    const removeThis = document.getElementById("remove");
+    removeThis.remove();
+}
+
+rmvBtn.addEventListener("click", () => {removeText()});
+
 
 // Oppgave 2
-// Using innerText instead of innerHtml.
-const changeBtn = document.getElementById("change-btn");
+const changeBtn = document.getElementById("change-btn")
+
 changeBtn.addEventListener("click", () => {
     document.getElementById("change").innerText = "Simen er best";
 });
+
 
 // Oppgave 3
 // Fetching what's typed into the InputBox by using .value
@@ -22,28 +27,28 @@ textInputBox.addEventListener("keyup", () => {
 
 // Oppgave 4
 const myList = ["item one", "item two", "item three"];
-
-// fetching the relevant html entities.
 const ul4 = document.getElementById("ul");
 const writeListBtn = document.getElementById("write-list");
 
-// on click fetches the first element from the array until it's empty.
-writeListBtn.addEventListener("click", () => {
-    let li = document.createElement("li");
+// function creating li elements from the array.
+function createLiElement() {
     if (myList.length !== 0) {
+        let li = document.createElement("li");
         li.appendChild(document.createTextNode(myList.shift()));
         ul4.appendChild(li);
     }
-});
+}
+
+writeListBtn.addEventListener("click", () => {createLiElement()});
+
 
 // Oppgave 5
 const textVisual = document.getElementById("placeholder");
 const tagInput = document.getElementById("select");
 const textInput = document.getElementById("text");
 const createBtn = document.getElementById("create");
-let tagInputEventTriggered = false;
 
-createBtn.addEventListener("click", () => {
+function userCreatedNode() {
     let node = document.createElement(tagInput.value);
     node.textContent = textInput.value;
     if (!textVisual.childElementCount) {
@@ -52,7 +57,9 @@ createBtn.addEventListener("click", () => {
         textVisual.removeChild(textVisual.firstChild);
         textVisual.appendChild(node);
     }
-});
+}
+
+createBtn.addEventListener("click", () => {userCreatedNode()});
 
 // Oppgave 6
 let ul6 = document.getElementById("list");
@@ -63,5 +70,15 @@ removeLiBtn.addEventListener("click", () => {
 });
 
 // Oppgave 7
+const inputName = document.getElementById("name");
+const orderBtn = document.getElementById("order");
+
+function stringLengthMaxCheck(string) {
+    return string.length > 4 ? true : false;
+}
+
+inputName.addEventListener("keyup", () => {
+    orderBtn.disabled = checkInputLength(inputName.value);
+});
 
 // Oppgave 8
