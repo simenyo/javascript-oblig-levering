@@ -61,6 +61,7 @@ function userCreatedNode() {
 
 createBtn.addEventListener("click", () => {userCreatedNode()});
 
+
 // Oppgave 6
 let ul6 = document.getElementById("list");
 const removeLiBtn = document.getElementById("remove-li");
@@ -68,6 +69,7 @@ const removeLiBtn = document.getElementById("remove-li");
 removeLiBtn.addEventListener("click", () => {
     ul6.removeChild(ul6.lastElementChild);
 });
+
 
 // Oppgave 7
 const inputName = document.getElementById("name");
