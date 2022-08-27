@@ -80,7 +80,19 @@ function stringLengthMaxCheck(string) {
 }
 
 inputName.addEventListener("keyup", () => {
-    orderBtn.disabled = checkInputLength(inputName.value);
+    orderBtn.disabled = stringLengthMaxCheck(inputName.value);
 });
 
+
 // Oppgave 8
+const setColorBtn = document.getElementById("color");
+const ul8 = document.querySelectorAll(".children li");
+
+for (let i = 0; i <= ul8.length -1; i++) {
+    console.log(ul8[i]);
+}
+
+function oddOrEven(number) {
+    return number % 2 == 0 ? true : false;
+}
+
