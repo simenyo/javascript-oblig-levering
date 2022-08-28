@@ -86,13 +86,23 @@ inputName.addEventListener("keyup", () => {
 
 // Oppgave 8
 const setColorBtn = document.getElementById("color");
-const ul8 = document.querySelectorAll(".children li");
-
-for (let i = 0; i <= ul8.length -1; i++) {
-    console.log(ul8[i]);
-}
+const ul8 = document.querySelector(".children");
+const ul8Array = Array.from(ul8.children);
+const evenStyle = "border: 2px solid pink;";
+const oddStyle = "border: 2px solid green;";
 
 function oddOrEven(number) {
     return number % 2 == 0 ? true : false;
 }
 
+function setStyle(li, number) {
+    oddOrEven(number) ? li.style = evenStyle : li.style = oddStyle;
+}
+
+function iterateList() {
+    ul8Array.forEach((element, index) => {
+        setStyle(element, index);
+    });
+}
+
+setColorBtn.addEventListener("click", iterateList);
