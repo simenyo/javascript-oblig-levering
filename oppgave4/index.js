@@ -9,3 +9,4 @@ import "./styles.css";
 // TODO: Lag en funksjon for å sjekke om tallene er sortert riktig av bruker
 // TODO: Lag en funksjon som "lager UI" --Nødvendig?
 // TODO: Lytt til 'click'-event og trigg checkNumberSeq ved klikk
+//

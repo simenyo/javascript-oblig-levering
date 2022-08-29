@@ -17,3 +17,4 @@ import "./styles.css";
 // - Vise hvor langt vi har kommet (posisjonen) på det ordet vi skal skrive
 // TODO: Lytt til keyup på window
 // TODO: Lytt til klikk på knappen. Klikket skal gjøre knappen "disabled" samt starte oppgaven
+//
