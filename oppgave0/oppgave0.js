@@ -48,6 +48,7 @@ const tagInput = document.getElementById("select");
 const textInput = document.getElementById("text");
 const createBtn = document.getElementById("create");
 
+// removing existing text and appending new node.
 function userCreatedNode() {
     let node = document.createElement(tagInput.value);
     node.textContent = textInput.value;
@@ -66,6 +67,7 @@ createBtn.addEventListener("click", () => {userCreatedNode()});
 let ul6 = document.getElementById("list");
 const removeLiBtn = document.getElementById("remove-li");
 
+// removing the last child element on click.
 removeLiBtn.addEventListener("click", () => {
     ul6.removeChild(ul6.lastElementChild);
 });
@@ -76,7 +78,7 @@ const inputName = document.getElementById("name");
 const orderBtn = document.getElementById("order");
 
 function stringLengthMaxCheck(string) {
-    return string.length > 4 ? true : false;
+    return string.length > 4;
 }
 
 inputName.addEventListener("keyup", () => {
@@ -91,13 +93,8 @@ const ul8Array = Array.from(ul8.children);
 const evenStyle = "border: 2px solid pink;";
 const oddStyle = "border: 2px solid green;";
 
-function oddOrEven(number) {
-    return number % 2 == 0 ? true : false;
-}
-
-function setStyle(li, number) {
-    oddOrEven(number) ? li.style = evenStyle : li.style = oddStyle;
-}
+// chaining function calls to check the enumeration of li's
+setColorBtn.addEventListener("click", iterateList);
 
 function iterateList() {
     ul8Array.forEach((element, index) => {
@@ -105,4 +102,10 @@ function iterateList() {
     });
 }
 
-setColorBtn.addEventListener("click", iterateList);
+function setStyle(li, index) {
+    oddOrEven(index) ? li.style = evenStyle : li.style = oddStyle;
+}
+
+function oddOrEven(number) {
+    return number % 2 === 0;
+}
